@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>旺角 Clay Pot Cafe | Hong Kong Style Clay Pot Rice in Boston</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+          content="旺角 Clay Pot Cafe · 港式煲仔饭 · 波士顿 Allston & Chinatown 双店，现点现煲，金黄饭焦与烟火气。">
+    
+    <!-- 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --bg-deep: #110f10;
+            --bg-dark: #181516;
+            --bg-soft: #221c1a;
+            --accent: #b55332;
+            --accent-light: #e9c9a5;
+            --text-main: #f5f0ea;
+            --text-muted: #b3a69a;
+            --border-soft: rgba(255, 255, 255, 0.08);
+            --max-width: 1120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: "Noto Serif SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #32221d 0%, #090608 50%, #050304 100%);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- 布局基础 --- */
+
+        .page {
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 56px 0;
+            }
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            opacity: 0.8;
+            margin-bottom: 12px;
+            font-family: "Oswald", system-ui, sans-serif;
+        }
+
+        .section-title-zh {
+            font-size: 26px;
+            letter-spacing: 0.2em;
+            margin-bottom: 4px;
+        }
+
+        .section-title-en {
+            font-family: "Oswald", system-ui, sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        /* --- 顶部导航 --- */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: linear-gradient(to bottom, rgba(5, 4, 4, 0.96), rgba(5, 4, 4, 0.86), transparent);
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: radial-gradient(circle, #f3e1c9 0%, #b55332 45%, #1b1310 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-text-main {
+            font-size: 16px;
+            letter-spacing: 0.28em;
+        }
+
+        .brand-text-sub {
+            font-family: "Oswald", system-ui, sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            font-family: "Oswald", system-ui, sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 8px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-size: 10px;
+            background: radial-gradient(circle at top left, rgba(229, 180, 120, 0.22), rgba(10, 8, 8, 0.95));
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 24px;
+            height: 24px;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            height: 1px;
+            background: var(--text-main);
+            width: 100%;
+        }
+
+        @media (max-width: 880px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 72px;
+                right: 24px;
+                left: 24px;
+                background: rgba(5, 4, 4, 0.98);
+                border-radius: 16px;
+                border: 1px solid var(--border-soft);
+                padding: 18px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* --- Hero --- */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            padding-top: 88px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            inset: -40px;
+            background-image: url("images/hero-pot.jpg");
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(30%) contrast(1.1);
+            transform: scale(1.02);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(219, 167, 104, 0.18) 0%, rgba(3, 2, 2, 0.96) 55%, #020102 100%);
+            z-index: -1;
+        }
+
+        .hero-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-main {
+            flex: 1.2;
+            min-width: 260px;
+        }
+
+        .hero-tagline {
+            font-size: 13px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-family: "Oswald", system-ui, sans-serif;
+            color: var(--accent-light);
+            margin-bottom: 12px;
+        }
+
+        .hero-title-zh {
+            font-size: 40px;
+            letter-spacing: 0.4em;
+            margin-bottom: 8px;
+        }
+
+        .hero-title-sub {
+            font-size: 18px;
+            letter-spacing: 0.35em;
+            color: var(--accent-light);
+            margin-bottom: 18px;
+        }
+
+        .hero-title-en {
+            font-family: "Oswald", system-ui, sans-serif;
+            font-size: 17px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 26px;
+        }
+
+        .hero-desc {
+            max-width: 420px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 26px;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 999px;
+            padding: 10px 22px;
+            font-size: 11px;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            font-family: "Oswald", system-ui, sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e3b176, #b55332);
+            color: #120b07;
+            border: none;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.03);
+            transform: translateY(-1px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 24px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .hero-meta-item {
+            border-left: 1px solid rgba(255, 255, 255, 0.18);
+            padding-left: 14px;
+        }
+
+        .hero-side {
+            flex: 0.9;
+            min-width: 260px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-card {
+            width: 320px;
+            max-width: 100%;
+            background: radial-gradient(circle at top, #2a1d18 0%, #120d0b 40%, #070506 100%);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 18px 18px 16px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card-tag {
+            position: absolute;
+            top: 16px;
+            right: -38px;
+            transform: rotate(40deg);
+            background: rgba(0, 0, 0, 0.55);
+            color: #f4e6d4;
+            padding: 4px 48px;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-family: "Oswald", system-ui, sans-serif;
+            border-top: 1px solid rgba(255, 255, 255, 0.24);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+        }
+
+        .hero-photo-wrap {
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            margin-bottom: 12px;
+        }
+
+        .hero-photo {
+            height: 200px;
+            background-image: url("images/hero-pot.jpg");
+            background-size: cover;
+            background-position: center;
+            filter: contrast(1.1) saturate(1.05);
+        }
+
+        .hero-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .hero-card-title {
+            font-size: 14px;
+            letter-spacing: 0.18em;
+        }
+
+        .hero-card-sub {
+            font-size: 11px;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            font-family: "Oswald", system-ui, sans-serif;
+            color: var(--accent-light);
+        }
+
+        @media (max-width: 880px) {
+            .hero-inner {
+                flex-direction: column;
+            }
+
+            .hero-side {
+                justify-content: flex-start;
+            }
+
+            .hero {
+                padding-top: 88px;
+                padding-bottom: 52px;
+            }
+
+            .hero-title-zh {
+                font-size: 32px;
+                letter-spacing: 0.32em;
+            }
+        }
+
+        /* --- Our Story --- */
+
+        .section-story {
+            background: radial-gradient(circle at top, #261817 0%, #090506 65%, #050304 100%);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .story-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 36px;
+            align-items: center;
+        }
+
+        .story-text {
+            position: relative;
+            padding-right: 8px;
+        }
+
+        .story-vertical {
+            position: absolute;
+            right: 0;
+            top: 0;
+            writing-mode: vertical-rl;
+            letter-spacing: 0.35em;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.18);
+        }
+
+        .story-body {
+            font-size: 13px;
+            line-height: 1.9;
+            color: var(--text-muted);
+        }
+
+        .story-body p + p {
+            margin-top: 12px;
+        }
+
+        .story-highlight {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--border-soft);
+            font-size: 12px;
+            color: var(--accent-light);
+        }
+
+        .story-side {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .story-photo-card {
+            width: 320px;
+            max-width: 100%;
+            border-radius: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            padding: 10px;
+            background: radial-gradient(circle at top, #35221d 0%, #140e0c 40%, #050304 100%);
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.85);
+        }
+
+        .story-photo {
+            height: 210px;
+            border-radius: 20px;
+            overflow: hidden;
+            background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .story-caption {
+            margin-top: 10px;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-family: "Oswald", system-ui, sans-serif;
+        }
+
+        @media (max-width: 880px) {
+            .story-inner {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .story-text {
+                padding-right: 0;
+            }
+
+            .story-vertical {
+                display: none;
+            }
+
+            .story-side {
+                justify-content: flex-start;
+            }
+        }
+
+        /* --- Signature Dishes / Menu Highlight --- */
+
+        .section-menu {
+            background: var(--bg-deep);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 32px;
+        }
+
+        .menu-list {
+            border-top: 1px solid var(--border-soft);
+            margin-top: 8px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+
+        .menu-item-main {
+            font-size: 14px;
+            letter-spacing: 0.1em;
+        }
+
+        .menu-item-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .menu-item-price {
+            font-size: 13px;
+            color: var(--accent-light);
+        }
+
+        .menu-note {
+            margin-top: 14px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .menu-side-card {
+            border-radius: 22px;
+            border: 1px solid var(--border-soft);
+            padding: 16px 18px;
+            background: radial-gradient(circle at top left, #2c1b16 0%, #0b090a 55%, #060304 100%);
+            box-shadow: 0 16px 55px rgba(0, 0, 0, 0.9);
+        }
+
+        .menu-side-header {
+            font-size: 14px;
+            letter-spacing: 0.18em;
+            margin-bottom: 6px;
+        }
+
+        .menu-side-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            font-family: "Oswald", system-ui, sans-serif;
+            margin-bottom: 14px;
+        }
+
+        .menu-side-body {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .menu-chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--accent-light);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 880px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- Locations --- */
+
+        .section-locations {
+            background: radial-gradient(circle at center, #241713 0%, #060304 60%, #050304 100%);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .location-card {
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 18px 18px 16px;
+            background: radial-gradient(circle at top, #2f1c16 0%, #120c0a 45%, #050304 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-badge {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-size: 10px;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.56);
+            font-family: "Oswald", system-ui, sans-serif;
+        }
+
+        .location-title-en {
+            font-family: "Oswald", system-ui, sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 4px;
+        }
+
+        .location-title-zh {
+            font-size: 16px;
+            letter-spacing: 0.24em;
+            margin-bottom: 10px;
+        }
+
+        .location-address {
+            font-size: 13px;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .location-city {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .location-sub {
+            font-size: 11px;
+            color: var(--accent-light);
+            margin-bottom: 8px;
+        }
+
+        .location-hours {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .location-contact {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .location-contact strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .location-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .location-actions .btn {
+            font-size: 10px;
+            padding: 8px 16px;
+        }
+
+        @media (max-width: 880px) {
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- Gallery / Atmosphere --- */
+
+        .section-gallery {
+            background: var(--bg-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 20px;
+        }
+
+        .gallery-main {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-soft);
+            background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=80");
+            background-size: cover;
+            background-position: center;
+            min-height: 230px;
+        }
+
+        .gallery-side {
+            display: grid;
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .gallery-small {
+            border-radius: 18px;
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            min-height: 108px;
+        }
+
+        .gallery-small:nth-child(1) {
+            background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .gallery-small:nth-child(2) {
+            background-image: url("https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .gallery-note {
+            margin-top: 14px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 880px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- CTA / Online Order --- */
+
+        .section-cta {
+            background: radial-gradient(circle at top, #2b1914 0%, #070405 55%, #050304 100%);
+            padding-bottom: 72px;
+        }
+
+        .cta-box {
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            padding: 24px 22px;
+            background: radial-gradient(circle at top left, #3a221a 0%, #0c0707 50%, #050304 100%);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cta-text-main {
+            font-size: 16px;
+            letter-spacing: 0.22em;
+            margin-bottom: 6px;
+        }
+
+        .cta-text-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .cta-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* --- Footer --- */
+
+        footer {
+            border-top: 1px solid var(--border-soft);
+            padding: 18px 0 20px;
+            background: #050304;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .footer-brand {
+            letter-spacing: 0.22em;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 14px;
+        }
+
+        .footer-links a {
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-family: "Oswald", system-ui, sans-serif;
+        }
+
+        @media (max-width: 600px) {
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-inner">
+            <a href="#top" class="brand">
+                <div class="brand-logo">
+                    <!-- 在此替换为你的 logo 图片路径 -->
+                    <img src="images/logo.jpg" alt="旺角 Clay Pot Cafe Logo" />
+                </div>
+                <div>
+                    <div class="brand-text-main">旺角 CLAY POT CAFE</div>
+                    <div class="brand-text-sub">HONG KONG STYLE CLAY POT RICE</div>
+                </div>
+            </a>
+            <nav>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#order" class="nav-cta">Order Online</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="top">
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-inner">
+                <div class="hero-main">
+                    <div class="hero-tagline">HONG KONG · CLAY POT RICE</div>
+                    <div class="hero-title-zh">火候 · 砂锅 · 靓米</div>
+                    <div class="hero-title-sub">一锅烟火气 · 一城夜归人</div>
+                    <div class="hero-title-en">MONG KOK CLAY POT CAFE · BOSTON</div>
+                    <div class="hero-desc">
+                        来自香港街头的煲仔饭，在波士顿重现锅气与饭焦的记忆。  
+                        现点现煲，让米香、酱香与锅巴在桌边吱吱作响——
+                        这就是旺角 Clay Pot Cafe 想留给你的夜宵仪式感。
+                    </div>
+                    <div class="hero-cta-row">
+                        <a href="#order" class="btn btn-primary">立即下单 ORDER ONLINE</a>
+                        <a href="#locations" class="btn btn-outline">预订座位 BOOK A TABLE</a>
+                    </div>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item">
+                            <div>ALLSTON · CHINATOWN</div>
+                            <div>70 BRIGHTON AVE · 74 KNEELAND ST</div>
+                        </div>
+                        <div class="hero-meta-item">
+                            <div>DINNER · LATE NIGHT</div>
+                            <div>现点现煲 · 金黄锅巴</div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="hero-side">
+                    <div class="hero-card">
+                        <div class="hero-card-tag">CLAY POT RICE · 港式煲仔饭</div>
+                        <div class="hero-photo-wrap">
+                            <div class="hero-photo"></div>
+                        </div>
+                        <div class="hero-card-footer">
+                            <div>
+                                <div class="hero-card-title">招牌 腊味煲仔饭</div>
+                                <div class="hero-card-sub">SIGNATURE · SAUSAGE · CLAY POT</div>
+                            </div>
+                            <div>锅气 / 饭焦 / 豉油</div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section id="story" class="section-story">
+            <div class="container story-inner">
+                <div class="story-text">
+                    <div class="eyebrow">OUR STORY</div>
+                    <div class="section-title-zh">从香港街头到波士顿夜色</div>
+                    <div class="section-title-en">MONG KOK CLAY POT CAFE</div>
+                    <div class="story-vertical">金 黄 饭 焦 · 锅 气</div>
+
+                    <div class="story-body">
+                        <p>
+                            在香港，真正懂煲仔饭的人，等一锅饭从生米煮成熟香，  
+                            也愿意等那最后几分钟——只为多一点锅巴，多一点锅气。
+                        </p>
+                        <p>
+                            旺角 Clay Pot Cafe 把这种「愿意等一等」的仪式感，带到了波士顿。  
+                            选靓米、泡米、焖煮、收火，每一锅都从生米开始，  
+                            用时间去换那一圈金黄的饭焦。
+                        </p>
+                        <p>
+                            我们想做的，不只是填饱肚子的一顿夜宵，  
+                            而是让你在 Allston 与 Chinatown 之间，也能吃到一口真正有「锅气」的煲仔饭。
+                        </p>
+                    </div>
+
+                    <div class="story-highlight">
+                        每一锅现点现煲，大约需要 <strong>15–20 分钟</strong>。  
+                        越是赶时间的城市，越需要一口愿意「慢一点」的好饭。
+                    </div>
+                </div>
+
+                <div class="story-side">
+                    <div class="story-photo-card">
+                        <div class="story-photo"></div>
+                        <div class="story-caption">
+                            夜幕 / 砂锅 / 饭香 · NIGHT IN MONG KOK
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Dishes / Menu -->
+        <section id="menu" class="section-menu">
+            <div class="container">
+                <div class="eyebrow">SIGNATURE CLAY POTS</div>
+                <div class="section-title-zh">必点煲仔饭</div>
+                <div class="section-title-en">A FEW POTS YOU SHOULDN'T MISS</div>
+
+                <div class="menu-grid">
+                    <div>
+                        <div class="menu-list">
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-main">腊味双拼煲仔饭</div>
+                                    <div class="menu-item-desc">Lap Cheong 香肠 + 咸肉，经典港式组合，一锅两种香气。</div>
+                                </div>
+                                <div class="menu-item-price">$16.95</div>
+                            </div>
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-main">麻辣牛肉煲仔饭</div>
+                                    <div class="menu-item-desc">微麻微辣，饭底吸满汤汁，适合波士顿的冬夜。</div>
+                                </div>
+                                <div class="menu-item-price">$17.95</div>
+                            </div>
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-main">鸡腿菇菌煲仔饭</div>
+                                    <div class="menu-item-desc">去骨鸡腿 + 鲜菇，酱香与菌香在锅里慢慢收汁。</div>
+                                </div>
+                                <div class="menu-item-price">$16.95</div>
+                            </div>
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-main">招牌「锅巴」加倍</div>
+                                    <div class="menu-item-desc">想要更多锅巴，可以提前跟店员说一声，我们会为你多留一点时间。</div>
+                                </div>
+                                <div class="menu-item-price">+$2</div>
+                            </div>
+                        </div>
+                        <div class="menu-note">
+                            * 以上为示例菜品与价格，可按照实际菜单调整。  
+                            若需展示完整菜单，可新建 <code>menu.html</code> 页面，并在导航链接到该页面。
+                        </div>
+                    </div>
+
+                    <aside class="menu-side-card">
+                        <div class="menu-side-header">一勺豉油，唤醒整锅饭香</div>
+                        <div class="menu-side-sub">HOUSE BLEND SOY SAUCE</div>
+                        <div class="menu-side-body">
+                            好吃的煲仔饭，离不开最后那一圈「豉油」。  
+                            旺角自家调配的酱油，咸度压得很低，重点是香气与回甘。  
+                            沿着砂锅边缘慢慢绕一圈，让酱香从锅边、锅巴，一路浸到米芯。
+                        </div>
+                        <div class="menu-chip-row">
+                            <div class="chip">低盐豉油 · Light Salt</div>
+                            <div class="chip">香气更重 · Aroma First</div>
+                            <div class="chip">适合拌锅巴 · Perfect for Crispy Rice</div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations -->
+        <section id="locations" class="section-locations">
+            <div class="container">
+                <div class="eyebrow">TWO LOCATIONS</div>
+                <div class="section-title-zh">在波士顿，找到旺角</div>
+                <div class="section-title-en">ALLSTON & CHINATOWN</div>
+
+                <div class="locations-grid">
+                    <!-- Allston 店 -->
+                    <div class="location-card">
+                        <div class="location-badge">ALLSTON</div>
+                        <div class="location-title-en">ALLSTON</div>
+                        <div class="location-title-zh">旺角 · Allston 店</div>
+                        <div class="location-address">70 Brighton Ave, Allston, MA 02134</div>
+                        <div class="location-city">Allston · Boston</div>
+
+                        <div class="location-sub">营业时间 · HOURS</div>
+                        <div class="location-hours">
+                            Mon–Thu: 11:30 AM – 10:00 PM<br />
+                            Fri–Sat: 11:30 AM – 11:00 PM<br />
+                            Sun: 12:00 PM – 10:00 PM
+                        </div>
+
+                        <div class="location-contact">
+                            电话 / PHONE: <strong>(XXX) XXX-XXXX</strong><br />
+                            建议电话或线上订位，旺季晚市可能需要等位。
+                        </div>
+
+                        <div class="location-actions">
+                            <a href="#" class="btn btn-primary">Order Allston</a>
+                            <a href="#" class="btn btn-outline">Book Table</a>
+                            <a href="https://maps.google.com/?q=70+Brighton+Ave,+Allston,+MA+02134"
+                               target="_blank" class="btn btn-outline">Open in Maps</a>
+                        </div>
+                    </div>
+
+                    <!-- Chinatown / Kneeland 店 -->
+                    <div class="location-card">
+                        <div class="location-badge">CHINATOWN</div>
+                        <div class="location-title-en">CHINATOWN</div>
+                        <div class="location-title-zh">旺角 · Kneeland 店</div>
+                        <div class="location-address">74 Kneeland St, Boston, MA 02111</div>
+                        <div class="location-city">Chinatown · Boston</div>
+
+                        <div class="location-sub">营业时间 · HOURS</div>
+                        <div class="location-hours">
+                            Mon–Thu: 12:00 PM – 10:30 PM<br />
+                            Fri–Sat: 12:00 PM – 11:30 PM<br />
+                            Sun: 12:00 PM – 10:30 PM
+                        </div>
+
+                        <div class="location-contact">
+                            电话 / PHONE: <strong>(XXX) XXX-XXXX</strong><br />
+                            接受堂食 / 外带 / 部分平台外卖。
+                        </div>
+
+                        <div class="location-actions">
+                            <a href="#" class="btn btn-primary">Order Chinatown</a>
+                            <a href="#" class="btn btn-outline">Book Table</a>
+                            <a href="https://maps.google.com/?q=74+Kneeland+St,+Boston,+MA+02111"
+                               target="_blank" class="btn btn-outline">Open in Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="section-gallery">
+            <div class="container">
+                <div class="eyebrow">CLAY POT · NIGHT</div>
+                <div class="section-title-zh">一锅饭，一桌夜色</div>
+                <div class="section-title-en">GLIMPSES FROM MONG KOK</div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-main"></div>
+                    <div class="gallery-side">
+                        <div class="gallery-small"></div>
+                        <div class="gallery-small"></div>
+                    </div>
+                </div>
+
+                <div class="gallery-note">
+                    以上图片为示意图，你可以替换为店内实景、煲仔饭特写、夜市氛围等照片，  
+                    只需要把背景图 URL 换成你自己的图片路径即可。
+                </div>
+            </div>
+        </section>
+
+        <!-- Order CTA -->
+        <section id="order" class="section-cta">
+            <div class="container">
+                <div class="cta-box">
+                    <div>
+                        <div class="cta-text-main">想吃锅巴的时候，就来旺角</div>
+                        <div class="cta-text-sub">
+                            在线点单支持外卖平台链接（Fantuan / Chowbus / Uber Eats 等），
+                            也可以直接电话下单自取。这里的按钮都可以换成你实际的链接。
+                        </div>
+                    </div>
+                    <div class="cta-btn-row">
+                        <!-- 把 href 替换为实际外卖链接 -->
+                        <a href="#" class="btn btn-primary">Order on Chowbus</a>
+                        <a href="#" class="btn btn-outline">Order on Fantuan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-brand">旺角 CLAY POT CAFE · BOSTON</div>
+            <div>© <span id="year"></span> Mong Kok Clay Pot Cafe. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#top">BACK TO TOP</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // 移动端导航
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("open");
+        });
+
+        navMenu.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", () => navMenu.classList.remove("open"));
+        });
+    }
+
+    // 自动年份
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

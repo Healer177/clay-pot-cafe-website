@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>旺角餐厅 Mong Kok Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta
+    name="description"
+    content="旺角餐厅 · 正宗港式风味，堂食外卖齐全，支持在线点餐。Mong Kok Restaurant - Authentic Hong Kong style cuisine."
+  />
+</head>
+<body class="bg-neutral-50 text-neutral-900">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-red-500 flex items-center justify-center text-white font-bold">
+          旺
+        </div>
+        <div>
+          <div class="font-semibold text-lg">旺角餐厅</div>
+          <div class="text-xs text-neutral-500">Mong Kok Restaurant</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm text-neutral-700">
+        <a href="#about" class="hover:text-red-500">关于我们</a>
+        <a href="#signature" class="hover:text-red-500">招牌菜</a>
+        <a href="#menu" class="hover:text-red-500">菜单</a>
+        <a href="#location" class="hover:text-red-500">地址·营业时间</a>
+      </nav>
+      <a
+        href="#order"
+        class="hidden md:inline-flex px-4 py-2 text-sm rounded-full bg-red-500 text-white font-medium hover:bg-red-600 transition"
+      >
+        立即在线点餐
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero 区块 -->
+  <section class="bg-gradient-to-b from-red-50 to-neutral-50">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.25em] text-red-500 mb-3">
+          AUTHENTIC HONG KONG FLAVORS
+        </p>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug">
+          旺角餐厅 ·
+          <span class="text-red-500">一口回到香港</span>
+        </h1>
+        <p class="text-neutral-700 text-sm md:text-base mb-4 leading-relaxed">
+          港式烧腊、煲仔饭、鲜炒小菜、奶茶焗餐……无论是
+          <span class="font-medium">工作日快餐</span>，
+          还是<span class="font-medium">周末家庭聚餐</span>，旺角餐厅都用最地道的味道陪你度过每一餐。
+        </p>
+        <p class="text-neutral-600 text-xs md:text-sm mb-6">
+          We serve classic Hong Kong style comfort food with fresh ingredients and fast, friendly service.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3" id="order">
+          <!-- 这里可以替换成真实外卖平台链接 -->
+          <a
+            href="https://www.chowbus.com" target="_blank" rel="noopener"
+            class="px-4 py-2 rounded-full bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition"
+          >
+            Chowbus 在线点餐
+          </a>
+          <a
+            href="https://www.fantuan.ca" target="_blank" rel="noopener"
+            class="px-4 py-2 rounded-full border border-neutral-300 text-sm hover:border-red-400 hover:text-red-500 transition"
+          >
+            Fantuan / 其它外卖平台
+          </a>
+          <span class="text-xs text-neutral-500">
+            支持自取 · 外卖 · 堂食
+          </span>
+        </div>
+      </div>
+
+      <!-- 右侧菜品展示图（可换成自己的图片） -->
+      <div class="relative">
+        <div class="absolute -top-6 -left-6 w-20 h-20 rounded-3xl bg-red-100"></div>
+        <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-3xl bg-amber-100"></div>
+
+        <div class="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-100 bg-white">
+          <div class="aspect-[4/3] bg-[url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg')] bg-cover bg-center"></div>
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-1">
+              <p class="font-semibold text-sm">叉烧烧鸭双拼饭 · 招牌推荐</p>
+              <span class="text-xs bg-red-50 text-red-500 px-2 py-0.5 rounded-full">Hot</span>
+            </div>
+            <p class="text-xs text-neutral-500">
+              Char siu & roasted duck over rice with seasonal veggies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section id="about" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-xl md:text-2xl font-semibold mb-3">关于旺角餐厅</h2>
+        <p class="text-sm text-neutral-700 leading-relaxed mb-3">
+          旺角餐厅以
+          <span class="font-medium">“快节奏城市里的一顿慢饭”</span>
+          为理念，坚持每日新鲜备料、现点现做。我们沿用传统港式做法，结合本地食材，用亲切的价格，让大家都能吃到安心又满足的一餐。
+        </p>
+        <p class="text-sm text-neutral-600 leading-relaxed">
+          From crispy roast meats to sizzling claypot rice, we bring the
+          bustling flavors of Mong Kok, Hong Kong, into the neighborhood —
+          perfect for a quick lunch, late-night snack, or family gathering.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 text-xs text-neutral-700">
+        <div class="p-4 rounded-2xl bg-white shadow-sm border border-neutral-100">
+          <p class="font-semibold mb-1">堂食 / 外卖 / 自取</p>
+          <p>灵活满足上班族、学生和家庭聚会的不同用餐场景。</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white shadow-sm border border-neutral-100">
+          <p class="font-semibold mb-1">每日例汤 & 特色小食</p>
+          <p>云吞、咖喱鱼蛋、菠萝包，让你一口回到茶餐厅。</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white shadow-sm border border-neutral-100">
+          <p class="font-semibold mb-1">港式奶茶 & 冻柠茶</p>
+          <p>传统丝袜奶茶、冻柠乐，搭配任何一份主食都很拿手。</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white shadow-sm border border-neutral-100">
+          <p class="font-semibold mb-1">聚会拼盘 & 预定</p>
+          <p>支持小型聚会、生日、公司团建拼盘预定。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 招牌菜 -->
+  <section id="signature" class="py-12 md:py-16 bg-neutral-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <h2 class="text-xl md:text-2xl font-semibold mb-2">招牌菜推荐</h2>
+          <p class="text-xs text-neutral-500">
+            每天菜品可能略有调整，以店内或外卖平台实际菜单为准。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-neutral-100 overflow-hidden">
+          <div class="aspect-[4/3] bg-[url('https://images.pexels.com/photos/2092906/pexels-photo-2092906.jpeg')] bg-cover bg-center"></div>
+          <div class="p-4">
+            <p class="font-semibold text-sm mb-1">蜜汁叉烧饭</p>
+            <p class="text-xs text-neutral-600 mb-2">
+              Char siu over rice with veggies & house sauce.
+            </p>
+            <p class="text-xs text-red-500 font-medium">人气 · 午餐高频下单</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-neutral-100 overflow-hidden">
+          <div class="aspect-[4/3] bg-[url('https://images.pexels.com/photos/1398688/pexels-photo-1398688.jpeg')] bg-cover bg-center"></div>
+          <div class="p-4">
+            <p class="font-semibold text-sm mb-1">港式滑蛋牛肉饭</p>
+            <p class="text-xs text-neutral-600 mb-2">
+              Silky egg & beef over rice, classic cha chaan teng style.
+            </p>
+            <p class="text-xs text-red-500 font-medium">经典 · 学生最爱</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-neutral-100 overflow-hidden">
+          <div class="aspect-[4/3] bg-[url('https://images.pexels.com/photos/6311629/pexels-photo-6311629.jpeg')] bg-cover bg-center"></div>
+          <div class="p-4">
+            <p class="font-semibold text-sm mb-1">腊味煲仔饭（冬季供应）</p>
+            <p class="text-xs text-neutral-600 mb-2">
+              Claypot rice with preserved meats, crispy rice at the bottom.
+            </p>
+            <p class="text-xs text-amber-600 font-medium">季节限定 · 建议提前预定</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 简易菜单预览 -->
+  <section id="menu" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <h2 class="text-xl md:text-2xl font-semibold mb-2">部分菜单预览</h2>
+          <p class="text-xs text-neutral-500">
+            完整菜单请查看 Chowbus / Fantuan / 店内纸质菜单。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div>
+          <h3 class="font-semibold mb-2">烧腊饭类</h3>
+          <ul class="space-y-1 text-neutral-700 text-xs">
+            <li>叉烧饭 Char Siu over Rice</li>
+            <li>烧鸭饭 Roasted Duck over Rice</li>
+            <li>叉烧烧鸭双拼饭 Char Siu & Duck Combo</li>
+            <li>三宝饭 BBQ Trio over Rice</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">炒粉面 & 焗饭</h3>
+          <ul class="space-y-1 text-neutral-700 text-xs">
+            <li>干炒牛河 Stir-fried Beef Rice Noodles</li>
+            <li>星洲炒米粉 Singapore Style Fried Vermicelli</li>
+            <li>焗猪排饭 Baked Pork Chop Rice</li>
+            <li>咖喱牛腩焗饭 Curry Beef Brisket Baked Rice</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">小食 & 饮品</h3>
+          <ul class="space-y-1 text-neutral-700 text-xs">
+            <li>鲜虾云吞汤 Wonton Soup</li>
+            <li>咖喱鱼蛋 Curry Fish Balls</li>
+            <li>港式丝袜奶茶 Hong Kong Milk Tea</li>
+            <li>冻柠茶 Iced Lemon Tea</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 地址 & 营业时间 -->
+  <section id="location" class="py-12 md:py-16 bg-neutral-50">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-xl md:text-2xl font-semibold mb-3">地址 · 营业时间</h2>
+        <!-- 这里请替换成旺角餐厅真实地址和电话 -->
+        <p class="text-sm text-neutral-800 mb-2">
+          📍 地址：XXX Street, Suite XXX, City, State ZIP
+        </p>
+        <p class="text-sm text-neutral-800 mb-2">
+          📞 电话：(+1) XXX-XXX-XXXX
+        </p>
+        <p class="text-sm text-neutral-800 mb-4">
+          📧 订餐 / 商务合作：example@email.com
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 text-xs text-neutral-700">
+          <div class="p-4 bg-white rounded-2xl shadow-sm border border-neutral-100">
+            <p class="font-semibold mb-1">营业时间</p>
+            <p>周一 - 周五：11:00 - 21:30</p>
+            <p>周六 - 周日：11:30 - 22:00</p>
+          </div>
+          <div class="p-4 bg-white rounded-2xl shadow-sm border border-neutral-100">
+            <p class="font-semibold mb-1">停车 & 交通</p>
+            <p>附近有路边停车或停车场</p>
+            <p>支持外卖自取快速打包</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 简单地图嵌入占位（可换成真实 Google Maps iframe） -->
+      <div class="bg-white rounded-2xl shadow-sm border border-neutral-100 p-4">
+        <p class="text-sm font-semibold mb-2">地图位置（示意）</p>
+        <div class="w-full aspect-[4/3] bg-neutral-200 rounded-xl flex items-center justify-center text-xs text-neutral-500">
+          在这里嵌入 Google Maps / 高德地图 iframe
+        </div>
+        <p class="mt-2 text-[11px] text-neutral-500">
+          如需导航，请在地图 App 中搜索「旺角餐厅 Mong Kok Restaurant」或使用上方地址。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="border-t border-neutral-200 py-4">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-[11px] text-neutral-500">
+      <p>© <span id="year"></span> 旺角餐厅 Mong Kok Restaurant. All rights reserved.</p>
+      <p>网站由 <span class="font-medium">Tianhang · ChatGPT</span> 协助设计</p>
+    </div>
+  </footer>
+
+  <script>
+    // 自动展示当前年份
+    document.getEleme
